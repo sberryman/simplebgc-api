@@ -1,0 +1,7 @@
+# need to skip these when releasing to NPM
+/examples
+/test
+/Makefile
+/CHANGELOG.md
+/Gruntfile.js
+/coverage.html

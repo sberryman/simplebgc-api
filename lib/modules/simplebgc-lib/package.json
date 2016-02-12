@@ -1,0 +1,16 @@
+{
+  "name": "simplebgc-api-lib",
+  "version": "1.0.0",
+  "description": "The all important library connection",
+  "main": "index.js",
+  "author": "Shaun Berryman <shaun@shaunberryman.com>",
+  "peerDependencies": {
+    "hapi": ">=12",
+    "hoek": ">=2.10.0"
+  },
+  "devDependencies": {
+    "hapi": ">=12",
+    "joi": ">=5.0.0",
+    "hoek": ">=2.10.0"
+  }
+}
