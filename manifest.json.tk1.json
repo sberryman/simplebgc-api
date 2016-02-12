@@ -1,0 +1,56 @@
+{
+  "server": {
+    "app": {
+    }
+  },
+  "connections": [
+    {
+      "host": "0.0.0.0",
+      "port": 4070,
+      "labels": ["api", "api-simplebgc"]
+    }
+  ],
+  "registrations": [
+    {
+      "plugin": {
+        "register": "./simplebgc-lib",
+        "options": {
+          "port": "/dev/ttyTHS1"
+        }
+      }
+    },
+    { "plugin": "vision" },
+    { "plugin": "inert" },
+    { 
+      "plugin": {
+        "register": "good",
+        "options": {
+          "opsInterval": 1000,
+          "reporters": [{
+              "reporter": "good-console",
+              "events": { "log": "*", "response": "*" }
+          }]
+        }
+      }
+    },
+    { "plugin": "hapi-auth-hawk" },
+    { 
+      "plugin": {
+        "register": "hapi-swaggered",
+        "options": {
+          "endpoint": "/docs",
+          "auth": false,
+          "info": {
+            "title": "SimpleBGC API",
+            "description": "HAPI wrapper around simplebgc library",
+            "contact": {
+              "name": "SimpleBGC HAPI API",
+              "email": "simplebgc-api@shaunberryman.com"
+            },
+            "version": "1.0.0"
+          }
+        }
+      }
+    }
+  ]
+}
