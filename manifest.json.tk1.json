@@ -19,6 +19,14 @@
         }
       }
     },
+    {
+      "plugin": {
+        "register": "./arduino-lib",
+        "options": {
+          "port": "/dev/ttyTHS2"
+        }
+      }
+    },
     { "plugin": "vision" },
     { "plugin": "inert" },
     { 
@@ -34,6 +42,7 @@
       }
     },
     { "plugin": "hapi-auth-hawk" },
+    { "plugin": "./hapi-redis" },
     { 
       "plugin": {
         "register": "hapi-swaggered",

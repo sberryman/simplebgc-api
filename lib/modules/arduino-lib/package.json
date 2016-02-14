@@ -1,0 +1,11 @@
+{
+  "name": "arduino-lib",
+  "version": "1.0.0",
+  "description": "Very simple serial library to communicate with the arduino. (Based on SimpleBGC)",
+  "main": "index.js",
+  "author": "Shaun Berryman <shaun@shaunberryman.com>",
+  "peerDependencies": {
+    "hapi": ">=12",
+    "hoek": ">=2.10.0"
+  }
+}

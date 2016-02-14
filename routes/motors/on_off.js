@@ -6,7 +6,7 @@ module.exports = exports = function (server, options) {
     // alias
     var sbgc = server.plugins['simplebgc-api-lib'].sbgc;
 
-    var swaggerNickname = 'updateCustomer';
+    var swaggerNickname = 'motorState';
     var handler = function (request, reply) {
 
         // default to turning them off (feel like this is safer)

@@ -12,6 +12,7 @@
   ],
   "registrations": [
     { "plugin": "./simplebgc-lib" },
+    { "plugin": "./arduino-lib" },
     { "plugin": "vision" },
     { "plugin": "inert" },
     { 
@@ -27,6 +28,7 @@
       }
     },
     { "plugin": "hapi-auth-hawk" },
+    { "plugin": "./hapi-redis" },
     { 
       "plugin": {
         "register": "hapi-swaggered",

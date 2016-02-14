@@ -1,0 +1,12 @@
+{
+  "name": "hapi-redis",
+  "version": "1.0.0",
+  "description": "The all important redis library",
+  "main": "index.js",
+  "author": "Shaun Berryman <shaun@shaunberryman.com>",
+  "peerDependencies": {
+    "hapi": ">=12",
+    "redis": ">2",
+    "hoek": ">=2.10.0"
+  }
+}

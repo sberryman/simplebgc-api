@@ -16,7 +16,6 @@ module.exports = exports = function (server, options) {
     var handler = function (request, reply) {
 
         // execute the method and return success!
-        console.log(request.payload)
         sbgc.rcRoll(request.payload.roll, request.payload.pitch, request.payload.yaw);
 
         // wait for the next tick
