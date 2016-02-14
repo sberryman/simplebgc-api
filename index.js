@@ -13,6 +13,8 @@ Glue.compose(Manifest, glueOptions, function (err, server) {
     // routes
     require('./routes/motors/on_off')(server);
     require('./routes/rcRoll')(server);
+    require('./routes/zoom/position')(server);
+    require('./routes/zoom/stop')(server);
 
     if (err) {
         console.log(err.stack || err);
