@@ -23,7 +23,7 @@
       "plugin": {
         "register": "./arduino-lib",
         "options": {
-          "port": "/dev/ttyTHS2"
+          "port": "/dev/ttyTHS0"
         }
       }
     },
