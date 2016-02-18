@@ -5,6 +5,7 @@ module.exports = exports = function (server, options) {
 
     // alias
     var sbgc = server.plugins['simplebgc-api-lib'].sbgc;
+    var redis = server.plugins['hapi-redis'].clientSubscribe;
 
     // roll, pitch and yaw input validation
     var rpyValidation = Joi.number()
@@ -57,4 +58,25 @@ module.exports = exports = function (server, options) {
             handler: handler
         }
     });
+
+    var redisChannel = 'sbgc:rcControl';
+    redis.on('message', _.debounce(function (channel, message) {
+
+        // only care about rcControl
+        if (channel !== redisChannel) {
+            return;
+        }
+
+        // make sure it is json!
+        if (typeof message === 'string') {
+            message = JSON.parse(message);
+        }
+
+        // control!
+        // console.log('client1 channel ' + channel + ': ' + typeof(message));
+        sbgc.rcRoll(message.roll, message.pitch, message.yaw);
+    }, 30) );
+
+    // also listen for redis events!
+    redis.subscribe(redisChannel);
 };
